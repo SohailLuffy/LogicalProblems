@@ -1,24 +1,31 @@
 ﻿using System;
-using System;
 
-namespace Fibonacci
+namespace PerfectNumber
 {
-    internal class FB
+    internal class PN
     {
+        static int sum;
         static void Main(string[] args)
         {
-            int number, a = 0, b = 1, c, i;
-
-            Console.Write("Enter The End Point Till You Want Fibonacci Sequence:");
-            number = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Fibonacci Series:" + a + " " + b);
-            
-            for (i = 2; i < number; i++)
+            Console.Write("Enter the Number: ");
+            int n = Convert.ToInt32(Console.ReadLine());
+            int i = 1;
+            while (i <= n / 2)
             {
-                c = a + b;
-                Console.Write(" " + c);
-                a = b;
-                b = c;
+
+                if (n % i == 0)
+                {
+                    sum += i;
+                }
+                i++;
+            }
+            if (sum == n)
+            {
+                Console.WriteLine(n + ":Is Perfect Number.");
+            }
+            else
+            {
+                Console.WriteLine(n + ":Is Not Perfect Number.");
             }
         }
     }
